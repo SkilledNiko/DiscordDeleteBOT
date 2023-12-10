@@ -17,7 +17,7 @@ async def clearmsg(ctx, num_messages: int = 1000):
     if ctx.author == bot.user:
         return
 
-    # Fetch the last `num_messages` messages in the channel
+    # fatch / look for the last "num_messages" messages in the channel
     messages = []
     async for message in ctx.channel.history(limit=num_messages + 1):
         messages.append(message)
@@ -27,5 +27,5 @@ async def clearmsg(ctx, num_messages: int = 1000):
         if message.id != ctx.message.id:
             await message.delete()
 
-# Replace BOT_TOKEN with the bot's token
+# Replace BOT_TOKEN with the bot's token (can be found in the discord bot dashboard)
 bot.run('BOT_TOKEN')
